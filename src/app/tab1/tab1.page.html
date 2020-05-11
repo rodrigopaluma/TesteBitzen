@@ -1,6 +1,15 @@
 <ion-header no-border>
   <ion-toolbar>
-    <ion-searchbar></ion-searchbar>
+    <ion-buttons slot="start">
+      <ion-searchbar></ion-searchbar>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+        <ion-fab-button>
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-buttons>
   </ion-toolbar>
   <ion-toolbar>
     <ion-title>Notícias</ion-title>
@@ -8,28 +17,32 @@
 </ion-header>
 
 <ion-content fullscreen="true">
-  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Lorem ipsum dolor amect vue in charts</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Curabitur vitae velit tincidunt lectus laoreet tempor. Integer bibendum laoreet diam, non suscipit elit malesuada non.
-    </ion-card-content>
-    <ion-grid>
-      <ion-row>
-        <ion-col size="3">
-          <ion-icon name="heart"></ion-icon>
-        </ion-col>
-        <ion-col size="3">
-          <ion-icon name="chatbubble-ellipses"></ion-icon>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-card>
-  
+  <div *ngIf="noticias | async as noticias$ else loading">
+    <ion-card *ngFor="let noticia of noticias$">
+      <ion-card-header>
+        <ion-card-title>{{noticia.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{noticia.body}}
+      </ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="3">
+            <ion-icon name="heart"></ion-icon> {{noticia.curtidasQnt}}
+          </ion-col>
+          <ion-col size="3" >
+            <ion-icon name="chatbubble-ellipses"></ion-icon> <span *ngIf="noticia.comentariosQnt else loadingComments">{{noticia.comentariosQnt}}</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
 </ion-content>
+
+<ng-template #loadingComments>
+  <span>?</span>
+</ng-template>
+
+<ng-template #loading>
+  <p>Carregando</p>
+</ng-template>
