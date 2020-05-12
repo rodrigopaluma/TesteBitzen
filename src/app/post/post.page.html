@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Notícias</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tab1" text="" icon="chevron-back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button autoHide="false">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title slot="center">Notícias</ion-title>
+  </ion-toolbar>
+</ion-header>-->
+
+<ion-content>
+  <div *ngIf="post | async as post$">
+    <h1> {{post$.title}} </h1>
+    <p> {{post$.body}}</p>
+    <div *ngIf="comentarios | async as comentarios$ else loading">
+      <h2> Comentários ({{comentarios$.length}})</h2>
+      <p *ngFor="let comentario of comentarios$">{{comentario.body}}</p>
+    </div>
+  </div>
+
+
+</ion-content>
+
+<ng-template #loading>
+  <p>Carregando Comentários</p>
+</ng-template>
