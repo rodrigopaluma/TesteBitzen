@@ -2,7 +2,7 @@
   <ion-grid>
     <ion-row>
       <ion-col size="10">
-        <ion-searchbar placeholder="Buscar"></ion-searchbar>
+        <ion-searchbar mode="ios" placeholder="Buscar"></ion-searchbar>
       </ion-col>
       <ion-col size="2">
         <ion-buttons class="ajuste-botao">
@@ -25,16 +25,16 @@
       <ion-card-header>
         <ion-card-title class="title-post">{{noticia.title}}</ion-card-title>
       </ion-card-header>
-      <ion-card-content>
+      <ion-card-content class="content">
         {{noticia.body}}
       </ion-card-content>
       <ion-grid>
-        <ion-row>
-          <ion-col size="3">
-            <ion-icon class="post-color" name="heart" size="large"></ion-icon> {{noticia.curtidasQnt}}
+        <ion-row class="ion-align-items-center">
+          <ion-col size="2">
+            <ion-icon class="post-color" name="heart"></ion-icon> <ion-text class="qnt">{{noticia.curtidasQnt}}</ion-text>
           </ion-col>
-          <ion-col size="3" >
-            <ion-icon class="post-color" name="chatbubble-ellipses" size="large"></ion-icon> <span *ngIf="noticia.comentariosQnt else loadingComments">{{noticia.comentariosQnt}}</span>
+          <ion-col size="2" >
+            <ion-icon class="post-color" name="chatbubble-ellipses"></ion-icon> <ion-text class="qnt" *ngIf="noticia.comentariosQnt else loadingComments">{{noticia.comentariosQnt}}</ion-text>
           </ion-col>
         </ion-row>
       </ion-grid>

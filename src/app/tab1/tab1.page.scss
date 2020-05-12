@@ -8,18 +8,51 @@
     font-size: 32px;
     color: #000;
     font-weight: 600;
+    float: left;
 }
 
 .title-post {
-    font-size: 20px;
+    font-size: 17px;
+    color: #000;
+    font-weight: 600;
+}
+
+.content {
+    font-size: 15px;
+    line-height: 20px;
+    color: #808e96;
+    font-weight: 300;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    height: 80px;
+    margin-bottom: 15px;
 }
 
 .post-color {
     color: #b5bbc6;
 }
 
+.column-item {
+    align-content: center;
+}
+
+.qnt {
+    color: #000;
+    font-size: 15px;
+    margin-left: 3px;
+}
+
 .center {
     align-items: center;
     display: flex;
     flex-direction: column;
+}
+
+ion-icon {
+    font-size: 15px;
 }
