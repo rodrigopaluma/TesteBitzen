@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>empregado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form *ngIf="form" class="login-box" [formGroup]="form">
+    <div class="edit-item">
+      <ion-label>Seu Login</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+      <span class="error">{{getErrorMessage('name')}}</span>
+    </div>
+    <div class="edit-item">
+      <ion-label>Idade</ion-label>
+      <ion-input type="number" formControlName="age"></ion-input>
+      <span class="error">{{getErrorMessage('age')}}</span>
+    </div>
+    <div class="edit-item">
+      <ion-label>Salário</ion-label>
+      <ion-input type="text" formControlName="salary"></ion-input>
+      <span class="error">{{getErrorMessage('salary')}}</span>
+    </div>
+    <ion-button mode="ios" shape="round" class="btn-edit" expand="block" color="primary" (click)="save()">Save</ion-button>
+  </form>
+</ion-content>

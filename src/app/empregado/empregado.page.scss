@@ -1,0 +1,25 @@
+.login-box {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+.error {
+    font-size: 12px;
+    font-weight: 300;
+    color: red;
+    margin-left: 25px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.btn-edit {
+    margin-top: 20px;
+    max-width: 92%;
+    margin-left: 4%;
+}
+
+.edit-item {
+    display: flex;
+    flex-flow: column;
+}
