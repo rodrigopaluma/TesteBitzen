@@ -1,0 +1,23 @@
+<ion-content class="container" [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h1 class="title-login">Olá!</h1>
+        <p>Está pronto para mudar sua vida?</p>
+        <form *ngIf="form" class="login-box" [formGroup]="form">
+          <div class="login-item">
+            <ion-label>Seu Login</ion-label>
+            <ion-searchbar searchIcon="undefined" mode="ios" placeholder="contato@teste.com.br" type="email" formControlName="login"></ion-searchbar>
+            <span class="error">{{getErrorMessage('login')}}</span>
+          </div>
+          <div class="login-item">
+            <ion-label>Senha</ion-label>
+            <ion-searchbar searchIcon="undefined" mode="ios" placeholder="**************" type="password" formControlName="senha"></ion-searchbar>
+            <span class="error">{{getErrorMessage('senha')}}</span>
+          </div>
+          <ion-button mode="ios" shape="round" class="btn-login" expand="block" color="primary" (click)="login()">Fazer login</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
