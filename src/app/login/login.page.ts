@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
   login() {
     this.form.markAllAsTouched();
     if (this.form.valid) {
-      this.router.navigate(['./tabs/tab1']);
+      this.router.navigate(['./home']); 
     } else  {
       console.log('Invalido');
     }

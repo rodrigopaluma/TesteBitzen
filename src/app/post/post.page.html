@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="tabs/tab1" text="" icon="chevron-back"></ion-back-button>
+      <ion-back-button defaultHref="home/noticias" text="" icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="primary">
       <ion-button autoHide="false">
@@ -15,7 +15,7 @@
 <ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row class="margin-row">
-      <ion-col *ngIf="post | async as post$">
+      <ion-col *ngIf="post | async as post$ else loading">
         <h1 class="title-post">{{post$.title}}</h1>
         <p class="text-post">{{post$.body}}</p>
         <div *ngIf="comentarios | async as comentarios$ else loading">
