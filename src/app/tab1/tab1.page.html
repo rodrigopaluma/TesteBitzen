@@ -23,7 +23,7 @@
   <div *ngIf="noticias | async as noticias$ else loading">
     <ion-card class="card-notice" *ngFor="let noticia of noticias$" [routerLink]="['/post/'+noticia.id]">
       <ion-card-header>
-        <ion-card-title class="title-post">{{noticia.title}}</ion-card-title>
+        <ion-card-title class="title-post-notice">{{noticia.title}}</ion-card-title>
       </ion-card-header>
       <ion-card-content class="content">
         {{noticia.body}}
