@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-empregado',
@@ -14,8 +15,12 @@ export class EmpregadoPage implements OnInit {
   form: FormGroup;
   create = true;
   idEmpregado;
+  empregadoResolved;
 
-  constructor(private activatedRoute: ActivatedRoute, private formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor(private activatedRoute: ActivatedRoute, 
+              private formBuilder: FormBuilder, 
+              private http: HttpClient,
+              public toastController: ToastController) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
@@ -30,6 +35,7 @@ export class EmpregadoPage implements OnInit {
           });
           return emp[0];
         })).subscribe(empregado => {
+          this.empregadoResolved = empregado;
           this.form = this.formBuilder.group({
             name: [empregado.employee_name, [Validators.required]],
             salary: [empregado.employee_salary, [Validators.required]],

@@ -1,7 +1,25 @@
 .login-box {
     display: flex;
     flex-flow: column;
-    width: 100%;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.title-page {
+    font-size: 34px;
+    font-weight: 600;
+    color: #1e2432;
+    margin-bottom: 40px;
+}
+
+.line-form {
+    margin-top: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.label {
+    font-weight: 600;
+    width: 50%;
 }
 
 .error {
@@ -15,11 +33,14 @@
 
 .btn-edit {
     margin-top: 20px;
-    max-width: 92%;
-    margin-left: 4%;
+    max-width: 100%;
 }
 
 .edit-item {
     display: flex;
     flex-flow: column;
+}
+
+.native-input:placeholder-shown {
+    color: #e5e5e5;
 }

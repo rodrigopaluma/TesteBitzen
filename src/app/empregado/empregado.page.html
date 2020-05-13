@@ -1,26 +1,34 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>empregado</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home/empregados" text="" icon="chevron-back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button autoHide="false">
+        <ion-icon slot="icon-only" ios="ellipsis-vertical" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title mode="ios" *ngIf="!empregadoResolved">Aguardando...</ion-title>
+    <ion-title mode="ios" *ngIf="empregadoResolved">{{empregadoResolved.employee_name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <form *ngIf="form" class="login-box" [formGroup]="form">
-    <div class="edit-item">
-      <ion-label>Seu Login</ion-label>
-      <ion-input type="text" formControlName="name"></ion-input>
-      <span class="error">{{getErrorMessage('name')}}</span>
-    </div>
-    <div class="edit-item">
-      <ion-label>Idade</ion-label>
-      <ion-input type="number" formControlName="age"></ion-input>
-      <span class="error">{{getErrorMessage('age')}}</span>
-    </div>
-    <div class="edit-item">
-      <ion-label>Salário</ion-label>
+    <ion-text class="title-page">{{empregadoResolved.employee_name}}</ion-text>
+    <ion-item >
+      <ion-label class="label" >Nome Completo</ion-label>
+      <ion-input type="text" formControlName="name" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="label">Idade</ion-label>
+      <ion-input type="text" formControlName="age"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="label">Salário Anual</ion-label>
       <ion-input type="text" formControlName="salary"></ion-input>
-      <span class="error">{{getErrorMessage('salary')}}</span>
-    </div>
-    <ion-button mode="ios" shape="round" class="btn-edit" expand="block" color="primary" (click)="save()">Save</ion-button>
+    </ion-item>
+    <ion-button mode="ios" class="btn-edit" expand="block" color="primary" (click)="save()">Editar
+            perfil</ion-button>
   </form>
 </ion-content>

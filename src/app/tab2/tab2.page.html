@@ -8,7 +8,7 @@
         <ion-buttons class="ajuste-botao">
           <ion-fab vertical="bottom">
             <ion-fab-button size="small">
-              <ion-icon name="add"></ion-icon>
+              <ion-icon size="large" [routerLink]="['/empregado']" name="add"></ion-icon>
             </ion-fab-button>
           </ion-fab>
         </ion-buttons>
@@ -18,7 +18,7 @@
       <ion-col>
         <div *ngIf="empregados | async as empregados$ else loading">
           <ion-list>
-            <ion-item lines="none" class="item-employee" *ngFor="let empregado of empregados$">
+            <ion-item lines="none" class="item-employee" *ngFor="let empregado of empregados$" [routerLink]="['/empregado/'+empregado.id]">
               <ion-avatar>
                 <div *ngIf="!empregado.profile_image" class="avatar-fake"></div>
                 <ion-img class="avatar" *ngIf="empregado.profile_image" [src]="empregado.profile_image"></ion-img>
@@ -27,7 +27,7 @@
                 <h3>{{empregado.employee_name}}</h3>
                 <p>Salário: {{empregado.employee_salary | number}}</p>
               </ion-label>
-              <ion-icon [routerLink]="['/editar']" slot="end" name="chevron-forward"></ion-icon>
+              <ion-icon slot="end" name="chevron-forward"></ion-icon>
             </ion-item>
           </ion-list>
         </div>
