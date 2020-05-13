@@ -12,12 +12,14 @@ import { Observable } from 'rxjs';
 export class Tab1Page implements OnInit {
 
   noticias;
+  noticiasOriginal = [];
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.noticias = this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts').pipe(
       map(noticias => {
+        this.noticiasOriginal = noticias;
         noticias.map(noticia => {
           // Gerando um numero aleatório para as curtidas
           noticia.curtidasQnt = Math.floor(Math.random() * 1000);
@@ -28,6 +30,20 @@ export class Tab1Page implements OnInit {
         });
         return noticias;
       }));
+  }
+
+  search(item) {
+    const key = item.detail.value;
+    const noticiasFiltradas = this.noticiasOriginal.filter(noticia => {
+      if (noticia.title.toLowerCase().includes(key)) {
+        return noticia;
+      }
+    })
+    const obs = new Observable((observer) => {
+      observer.next(noticiasFiltradas)
+      observer.complete()
+    })
+    this.noticias = obs;
   }
 }
 

@@ -1,9 +1,4 @@
-ion-fab-button{
-    --box-shadow-color:  rgba(255, 101, 160, 0.5);
-    background-color: var(--box-shadow-color);
-    box-shadow: 0 3px 3px 1px var(--box-shadow-color), 0 3px 3px 0 var(--box-shadow-color), 0 1px 5px 0 var(--box-shadow-color);
-    border-radius: 50% !important;
-}
+
 
 .name-top {
     font-size: 15px;
@@ -16,7 +11,19 @@ ion-fab-button{
     flex-flow: column;
     width: 82%;
     margin-left: 6%;
-    margin-top: 20px;
+    margin-top: 10px;
+}
+
+.native-input.sc-ion-input-md {
+    text-align: right;
+    color: #808e96;
+    font-size: 14px;
+}
+
+.native-input.sc-ion-input-ios {
+    text-align: right;
+    color: #808e96;
+    font-size: 14px;
 }
 
 .btn-edit {
@@ -42,6 +49,10 @@ ion-fab-button{
 .label {
     font-weight: 600;
     width: 50%;
+}
+
+.item-input.sc-ion-label-ios-h, .item-input .sc-ion-label-ios-h {
+    font-size: 15px;
 }
 
 .error {

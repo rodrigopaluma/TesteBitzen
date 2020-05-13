@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -9,6 +9,7 @@ import { ToastController } from '@ionic/angular';
   selector: 'app-empregado',
   templateUrl: './empregado.page.html',
   styleUrls: ['./empregado.page.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class EmpregadoPage implements OnInit {
 

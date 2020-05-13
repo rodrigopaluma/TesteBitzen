@@ -18,7 +18,7 @@
       <ion-col>
         <div *ngIf="empregados | async as empregados$ else loading">
           <ion-list>
-            <ion-item lines="none" class="item-employee" *ngFor="let empregado of empregados$" [routerLink]="['/empregado/'+empregado.id]">
+            <ion-item lines="none" class="item-employee" *ngFor="let empregado of empregados$" [routerLink]="['/empregado/'+empregado.id]" mode="md">
               <ion-avatar>
                 <div *ngIf="!empregado.profile_image" class="avatar-fake"></div>
                 <ion-img class="avatar" *ngIf="empregado.profile_image" [src]="empregado.profile_image"></ion-img>
