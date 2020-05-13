@@ -8,8 +8,8 @@
         <ion-icon slot="icon-only" ios="ellipsis-vertical" md="ellipsis-vertical"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title mode="ios" *ngIf="!empregadoResolved">Aguardando...</ion-title>
-    <ion-title mode="ios" *ngIf="empregadoResolved">{{empregadoResolved.employee_name}}</ion-title>
+    <ion-title mode="ios" *ngIf="!empregadoResolved">Aguarde...</ion-title>
+    <ion-title class="name-top" mode="ios" *ngIf="empregadoResolved">{{empregadoResolved.employee_name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 

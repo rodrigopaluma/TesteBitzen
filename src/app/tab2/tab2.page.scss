@@ -1,8 +1,11 @@
 ion-fab-button{
     --box-shadow-color:  rgba(255, 101, 160, 0.5);
     background-color: var(--box-shadow-color);
-    box-shadow: 0 3px 5px -1px var(--box-shadow-color), 0 6px 10px 0 var(--box-shadow-color), 0 1px 18px 0 var(--box-shadow-color);
+    box-shadow: 0 3px 3px 1px var(--box-shadow-color), 0 3px 3px 0 var(--box-shadow-color), 0 1px 5px 0 var(--box-shadow-color);
     border-radius: 50% !important;
+    width: 36px;
+    height: 36px;
+    margin-top: -20px;
 }
 
 .title-page {
@@ -10,6 +13,7 @@ ion-fab-button{
     color: #000;
     font-weight: 600;
     float: left;
+    margin-top: 10px;
 }
 
 .ajuste-botao {
