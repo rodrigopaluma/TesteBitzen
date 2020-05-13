@@ -25,7 +25,7 @@ export class LoginPage implements OnInit {
     if (this.form.valid) {
       this.router.navigate(['./home']); 
     } else  {
-      console.log('Invalido');
+      console.log('\x1b[41m%s\x1b[37m','Formulário Inválido, preencha corretamente.');
     }
   }
   getErrorMessage(controlName) {

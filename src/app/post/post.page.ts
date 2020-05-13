@@ -18,7 +18,6 @@ export class PostPage implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-      console.log(params)
       if (params.id) {
         this.postId = params.id;
         this.post = this.http.get<any>(`https://jsonplaceholder.typicode.com/posts/${this.postId}`);
