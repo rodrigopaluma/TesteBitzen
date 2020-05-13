@@ -1,7 +1,7 @@
 ion-fab-button{
     --box-shadow-color:  rgba(255, 101, 160, 0.5);
     background-color: var(--box-shadow-color);
-    box-shadow: 0 3px 5px -1px var(--box-shadow-color), 0 6px 10px 0 var(--box-shadow-color), 0 1px 18px 0 var(--box-shadow-color);
+    box-shadow: 0 3px 3px 1px var(--box-shadow-color), 0 3px 3px 0 var(--box-shadow-color), 0 1px 5px 0 var(--box-shadow-color);
     border-radius: 50% !important;
 }
 
@@ -18,10 +18,16 @@ ion-fab-button{
     float: left;
 }
 
+.card-notice {
+    margin-bottom:15px;
+}
+
 .title-post {
     font-size: 17px;
     color: #000;
     font-weight: 600;
+    line-height: 22px;
+    margin-top: 10px;
 }
 
 .content {
@@ -50,8 +56,9 @@ ion-fab-button{
 
 .qnt {
     color: #000;
-    font-size: 15px;
+    font-size: 16px;
     margin-left: 3px;
+    font-weight: 300;
 }
 
 .center {
@@ -61,6 +68,23 @@ ion-fab-button{
 }
 
 ion-icon {
-    font-size: 15px;
+    font-size: 17px;
+}
+
+.searchbar-input {
+    height: 36px !important;
+}
+
+.searchbar-left-aligned.sc-ion-searchbar-ios-h .searchbar-input.sc-ion-searchbar-ios {
+    padding-inline-start: 10px ;
+    font-size: 14px;
+    color: #8c989b;
+    height: 36px;
+    border-radius: 18px;
+    text-indent: 20px;
+}
+
+.searchbar-left-aligned.sc-ion-searchbar-ios-h .searchbar-search-icon.sc-ion-searchbar-ios {
+    color: #b5bbc6;
 }
 

@@ -1,8 +1,10 @@
 .login-box {
     display: flex;
     flex-flow: column;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
 }
+
 
 .container {
     margin: 0 26px !important;
@@ -21,6 +23,7 @@
         color: #000;
         margin-left: 15px;
         margin-bottom: 40px;
+        margin-top: -5px;
     }
 }
 
@@ -28,6 +31,8 @@
     display: flex;
     flex-flow: column;
 }
+
+
 
 .error {
     font-size: 12px;
@@ -40,16 +45,35 @@
 
 .btn-login {
     margin-top: 20px;
-    max-width: 92%;
-    margin-left: 4%;
+    max-width: 96%;
+    --border-radius: 20px;
 }
 
 ion-search-bar ion-icon {
     background: none !important;
+    --height: 50px;
 }
 
 ion-label {
-    margin-left: 25px !important;
+    margin-left: 10px !important;
     font-size: 15px;
     font-weight: 400;
+}
+
+.texto {
+    padding-left: 0px;
+}
+
+
+
+.searchbar-input {
+    padding-inline-start: 10px ;
+    --border-radius: 15px;
+}
+
+.searchbar-left-aligned.sc-ion-searchbar-ios-h .searchbar-input.sc-ion-searchbar-ios {
+    padding-inline-start: 10px ;
+    font-size: 14px;
+    color: #8c989b;
+    height: 50px;
 }

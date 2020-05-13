@@ -15,7 +15,7 @@
 
 <ion-content [fullscreen]="true">
   <form *ngIf="form" class="login-box" [formGroup]="form">
-    <ion-text class="title-page">{{empregadoResolved.employee_name}}</ion-text>
+    <ion-text class="title-page">{{empregadoResolved ? empregadoResolved.employee_name : 'Novo Registro'}}</ion-text>
     <ion-item >
       <ion-label class="label" >Nome Completo</ion-label>
       <ion-input type="text" formControlName="name" ></ion-input>

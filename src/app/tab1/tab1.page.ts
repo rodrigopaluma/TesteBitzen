@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { map, catchError } from 'rxjs/operators';
@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  styleUrls: ['tab1.page.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class Tab1Page implements OnInit {
 

@@ -6,7 +6,7 @@
       </ion-col>
       <ion-col size="2">
         <ion-buttons class="ajuste-botao">
-          <ion-fab vertical="bottom" >
+          <ion-fab vertical="bottom">
             <ion-fab-button size="small">
               <ion-icon size="large" name="add"></ion-icon>
             </ion-fab-button>
@@ -21,7 +21,7 @@
     </ion-row>
   </ion-grid>
   <div *ngIf="noticias | async as noticias$ else loading">
-    <ion-card *ngFor="let noticia of noticias$" [routerLink]="['/post/'+noticia.id]">
+    <ion-card class="card-notice" *ngFor="let noticia of noticias$" [routerLink]="['/post/'+noticia.id]">
       <ion-card-header>
         <ion-card-title class="title-post">{{noticia.title}}</ion-card-title>
       </ion-card-header>
@@ -30,11 +30,19 @@
       </ion-card-content>
       <ion-grid>
         <ion-row class="ion-align-items-center">
-          <ion-col size="2">
-            <ion-icon class="post-color" name="heart"></ion-icon> <ion-text class="qnt">{{noticia.curtidasQnt}}</ion-text>
+          <ion-col size="3">
+            <div style="display: flex;">
+              <ion-icon class="post-color" name="heart"></ion-icon>
+              <ion-text class="qnt">{{noticia.curtidasQnt}}</ion-text>
+            </div>
+
           </ion-col>
-          <ion-col size="2" >
-            <ion-icon class="post-color" name="chatbubble-ellipses"></ion-icon> <ion-text class="qnt" *ngIf="noticia.comentariosQnt else loadingComments">{{noticia.comentariosQnt}}</ion-text>
+          <ion-col size="3">
+            <div style="display: flex;">
+              <ion-icon class="post-color" name="chatbubble-ellipses"></ion-icon>
+              <ion-text class="qnt" *ngIf="noticia.comentariosQnt else loadingComments">{{noticia.comentariosQnt}}
+              </ion-text>
+            </div>
           </ion-col>
         </ion-row>
       </ion-grid>
