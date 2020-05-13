@@ -1,11 +1,11 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home/empregados" text="" icon="chevron-back"></ion-back-button>
+      <ion-back-button color="dark" defaultHref="home/empregados" text="" icon="chevron-back"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="primary">
       <ion-button autoHide="false">
-        <ion-icon slot="icon-only" ios="ellipsis-vertical" md="ellipsis-vertical"></ion-icon>
+        <ion-icon color="dark" slot="icon-only" ios="ellipsis-vertical" md="ellipsis-vertical"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-title mode="ios" *ngIf="!empregadoResolved">Aguarde...</ion-title>
@@ -13,22 +13,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <form *ngIf="form" class="login-box" [formGroup]="form">
+<ion-content>
+  <form *ngIf="form" class="employee-box" [formGroup]="form">
     <ion-text class="title-page">{{empregadoResolved ? empregadoResolved.employee_name : 'Novo Registro'}}</ion-text>
-    <ion-item >
+    <ion-item class="space">
       <ion-label class="label" >Nome Completo</ion-label>
       <ion-input type="text" formControlName="name" ></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item class="space">
       <ion-label class="label">Idade</ion-label>
       <ion-input type="text" formControlName="age"></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item class="space">
       <ion-label class="label">Salário Anual</ion-label>
       <ion-input type="text" formControlName="salary"></ion-input>
     </ion-item>
-    <ion-button mode="ios" class="btn-edit" expand="block" color="primary" (click)="save()">Editar
-            perfil</ion-button>
+    <ion-button mode="ios" class="btn-edit" expand="block" color="primary" (click)="save()">
+      Editar perfil
+    </ion-button>
   </form>
 </ion-content>

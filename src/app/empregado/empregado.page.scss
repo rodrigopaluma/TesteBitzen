@@ -5,19 +5,26 @@ ion-fab-button{
     border-radius: 50% !important;
 }
 
-
 .name-top {
     font-size: 15px;
     font-weight: 300;
     line-height: 20px;
 }
 
-.login-box {
+.employee-box{
     display: flex;
     flex-flow: column;
-    width: 90%;
-    margin-left: 5%;
+    width: 82%;
+    margin-left: 6%;
     margin-top: 20px;
+}
+
+.btn-edit {
+    margin-top: 20px;
+    max-width: 100%;
+    margin-left: 5%;
+    --border-radius: 20px;
+    height: 56px;
 }
 
 .title-page {
@@ -46,13 +53,6 @@ ion-fab-button{
     margin-bottom: 10px;
 }
 
-.btn-edit {
-    margin-top: 20px;
-    max-width: 100%;
-    --border-radius: 20px;
-    height: 56px;
-}
-
 .edit-item {
     display: flex;
     flex-flow: column;
@@ -60,4 +60,9 @@ ion-fab-button{
 
 .native-input:placeholder-shown {
     color: #e5e5e5;
+}
+
+.space {
+    margin-bottom: 8px;
+    margin-top: 8px;
 }
